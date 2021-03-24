@@ -47,7 +47,6 @@ public class ViewGUI {
         model.addElement("001                       Raquel Lima");
 
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Benutzer");
         frame.setSize(700, 1000);
         frame.setVisible(true);
