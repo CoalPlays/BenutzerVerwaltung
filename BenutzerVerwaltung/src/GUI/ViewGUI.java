@@ -2,10 +2,8 @@ package GUI;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class MainGUI {
+public class ViewGUI {
 
     private JFrame frame = new JFrame();
     private JPanel panel1 = new JPanel();
@@ -18,11 +16,10 @@ public class MainGUI {
 
 
     public static void main(String[] args) {
-
-        MainGUI a = new MainGUI();
+        ViewGUI a = new ViewGUI();
     }
 
-    public MainGUI() {
+    public ViewGUI() {
         frame.setLayout(new BorderLayout());
         panel1.setLayout(new BorderLayout());
         panel2.setLayout(new BorderLayout());
@@ -36,12 +33,6 @@ public class MainGUI {
         panel1.add(addBtn, BorderLayout.EAST);
         addBtn.setPreferredSize(new Dimension(70,70));
         addBtn.setFont(new Font("Arial", Font.PLAIN, 40));
-        addBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                CreateGUI a = new CreateGUI();//opens Create view
-            }
-        });
 
         panel2.add(idname, BorderLayout.NORTH);
         idname.setFont(new Font("Arial", Font.PLAIN, 24));
@@ -57,7 +48,7 @@ public class MainGUI {
 
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("Benutzer-Verwaltung");
+        frame.setTitle("Benutzer");
         frame.setSize(700, 1000);
         frame.setVisible(true);
     }
