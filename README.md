@@ -14,5 +14,5 @@ Dies ist ein Benutzer verwaltungs Programm. Man kann Nutzer editieren und hinzuf
 - [ ] Funktion um User zu erstellen
 - [ ] User in der Detailview anzeigen
 
-# Note
+# Grade
 pending... :octocat:	
