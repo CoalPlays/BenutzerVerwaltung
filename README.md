@@ -2,7 +2,7 @@
 ## Java Projekt für modul 120.
 
 # About
-Dies ist ein Benutzer verwaltungs Programm. Man kann Nutzer editieren und hinzufügen. Sehr simpel :exploding_head: Das ganze ist in Java programmiert. :flamingo:		
+Dies ist ein Benutzer verwaltungs Programm. Man kann Nutzer editieren und hinzufügen. Sehr simpel :exploding_head: Das ganze ist in Java programmiert. :tada:			
 
 # To-Do
 
