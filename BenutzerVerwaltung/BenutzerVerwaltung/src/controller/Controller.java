@@ -1,5 +1,6 @@
 package controller;
 
+import Data.IdGenerator;
 import Data.UserData;
 import GUI.CreateGUI;
 import GUI.MainGUI;
@@ -7,6 +8,7 @@ import GUI.ViewGUI;
 import Model.Model;
 import sun.applet.Main;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class Controller {
@@ -15,18 +17,26 @@ public class Controller {
     private CreateGUI createGUI;
     private MainGUI mainGUI;
     private ViewGUI viewGUI;
+    private UserData userData;
+    private IdGenerator idGenerator;
 
 
     public Controller() {
+        idGenerator = new IdGenerator();
         model = new Model();
+        userData = new UserData();
         setMainVis();
     }
 
     public void addUser(UserData userData){
+
         model.createUser(userData);
     }
 
-
+    public DefaultListModel tranferList(){
+        DefaultListModel model1 = model.getList();
+        return model1;
+    }
 
     public void setMainVis() {
         vanish();
@@ -34,7 +44,7 @@ public class Controller {
     }
     public void setCreateVis() {
         vanish();
-        createGUI = new CreateGUI(this);
+        createGUI = new CreateGUI(this, userData);
     }
     public void setDetailVis() {
         vanish();
@@ -52,5 +62,8 @@ public class Controller {
         if (createGUI != null) {
             createGUI.getFrame().dispose();
         }
+    }
+    public String getID() {
+        return idGenerator.getID();
     }
 }

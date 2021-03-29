@@ -45,8 +45,7 @@ public class ViewGUI {
         list.setFont(new Font("Arial", Font.PLAIN, 24));
         panel2.add(list, BorderLayout.CENTER);
         list.setBorder(BorderFactory.createEmptyBorder(50,80,0,80));
-        model.addElement("001                       Raquel Lima");
-        model.addElement("001                       Raquel Lima");
+
 
 
         frame.setTitle("Benutzer");

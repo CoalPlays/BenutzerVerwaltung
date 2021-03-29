@@ -12,7 +12,6 @@ import java.awt.event.ActionListener;
 
 public class CreateGUI {
 
-    private IdGenerator id = new IdGenerator();
     private Controller controller;
     private JFrame frame = new JFrame();
     private JPanel panel1 = new JPanel();
@@ -36,7 +35,7 @@ public class CreateGUI {
 
 
 
-    public CreateGUI(Controller controller) {
+    public CreateGUI(Controller controller, UserData userData) {
         this.controller = controller;
         frame.setLayout(new BorderLayout());
         panel1.setLayout(new BorderLayout());
@@ -94,7 +93,7 @@ public class CreateGUI {
         createBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UserData uData = new UserData(id.getID(), field1.getText(), field2.getText(), field3.getText(), field4.getText(), field5.getText(), field6.getText(), field7.getText(), field8.getText());
+                UserData uData = new UserData(controller.getID(), field1.getText(), field2.getText(), field3.getText(), field4.getText(), field5.getText(), field6.getText(), field7.getText(), field8.getText());
                 controller.addUser(uData);
                 controller.setMainVis();
             }

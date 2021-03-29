@@ -14,6 +14,9 @@ public class UserData {
     private String ort;
     private String number;
 
+    public UserData() {
+    }
+
     public UserData(String ID, String vorname, String nachname, String geburtsdatum, String geschlecht, String strasse, String plz, String ort, String number) {
         this.ID = ID;
         this.vorname = vorname;
@@ -91,19 +94,11 @@ public class UserData {
         this.number = number;
     }
 
-    public String getID(){
-        ident++;
-        String id = "";
-        String idPart = Integer.toString(ident);
-        if (ident < 10){
-            id = "00" + ident;
-        }
-        if (9 < ident && ident < 100){
-            id = "0" + idPart;
-        }
-        if (ident > 99){
-            id += ident;
-        }
-        return id;
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 }

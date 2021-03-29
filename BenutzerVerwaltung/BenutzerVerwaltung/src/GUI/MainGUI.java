@@ -20,7 +20,6 @@ public class MainGUI {
     private JLabel title = new JLabel("Benutzer", SwingConstants.CENTER);
     private JLabel idname = new JLabel("ID                      Name");
     JList list = new JList();
-    DefaultListModel model = new DefaultListModel();
 
 
 
@@ -52,12 +51,11 @@ public class MainGUI {
         idname.setBorder(BorderFactory.createEmptyBorder(20,80,0,0));
 
 
-        list.setModel(model);
+        list.setModel(controller.tranferList());
         list.setFont(new Font("Arial", Font.PLAIN, 24));
         panel2.add(list, BorderLayout.CENTER);
         list.setBorder(BorderFactory.createEmptyBorder(50,80,0,80));
-        model.addElement("001                   Raquel Lima");
-        model.addElement("001                   Raquel Lima");
+
 
 
         panel3.add(detailBtn);
