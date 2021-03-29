@@ -18,7 +18,7 @@ public class MainGUI {
     private JButton addBtn = new JButton("+");
     private JButton detailBtn = new JButton("Details");
     private JLabel title = new JLabel("Benutzer", SwingConstants.CENTER);
-    private JLabel idname = new JLabel("ID                      Name");
+    private JLabel idname = new JLabel("ID       Name");
     JList list = new JList();
 
 

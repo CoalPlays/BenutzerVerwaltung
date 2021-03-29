@@ -13,6 +13,7 @@ public class ViewGUI {
     private JPanel panel1 = new JPanel();
     private JPanel panel2 = new JPanel();
     private JButton addBtn = new JButton("+");
+    private JButton test = new JButton("test");
     private JLabel title = new JLabel("Benutzer", SwingConstants.CENTER);
     private JLabel idname = new JLabel("ID                      Name");
     JList list = new JList();
@@ -45,7 +46,7 @@ public class ViewGUI {
         list.setFont(new Font("Arial", Font.PLAIN, 24));
         panel2.add(list, BorderLayout.CENTER);
         list.setBorder(BorderFactory.createEmptyBorder(50,80,0,80));
-
+        model.addElement(test);
 
 
         frame.setTitle("Benutzer");
