@@ -8,19 +8,19 @@ public class Model {
     private ArrayList<UserData> data = new ArrayList<>();
     private IdGenerator id = new IdGenerator();
 
-    public Model (){
+    public Model() {
 
     }
 
     public Model(UserData userData) {
+
         createUser(userData);
     }
 
-    public void createUser (UserData userData) {
+    public void createUser(UserData userData) {
+
         data.add(userData);
     }
 
-    public ArrayList<UserData> getData() {
-        return data;
-    }
+
 }

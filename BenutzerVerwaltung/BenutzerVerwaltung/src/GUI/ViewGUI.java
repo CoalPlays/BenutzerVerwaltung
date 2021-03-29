@@ -1,9 +1,13 @@
 package GUI;
 
+import controller.Controller;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class ViewGUI {
+
+    private Controller controller;
 
     private JFrame frame = new JFrame();
     private JPanel panel1 = new JPanel();
@@ -15,11 +19,9 @@ public class ViewGUI {
     DefaultListModel model = new DefaultListModel();
 
 
-    public static void main(String[] args) {
-        ViewGUI a = new ViewGUI();
-    }
 
-    public ViewGUI() {
+    public ViewGUI(Controller controller) {
+        this.controller = controller;
         frame.setLayout(new BorderLayout());
         panel1.setLayout(new BorderLayout());
         panel2.setLayout(new BorderLayout());
@@ -50,5 +52,9 @@ public class ViewGUI {
         frame.setTitle("Benutzer");
         frame.setSize(700, 1000);
         frame.setVisible(true);
+    }
+
+    public JFrame getFrame() {
+        return frame;
     }
 }

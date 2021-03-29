@@ -1,11 +1,15 @@
 package GUI;
 
+import controller.Controller;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainGUI {
+
+    private Controller controller;
 
     private JFrame frame = new JFrame();
     private JPanel panel1 = new JPanel();
@@ -19,12 +23,9 @@ public class MainGUI {
     DefaultListModel model = new DefaultListModel();
 
 
-    public static void main(String[] args) {
 
-        MainGUI a = new MainGUI();
-    }
-
-    public MainGUI() {
+    public MainGUI(Controller controller) {
+        this.controller = controller;
         frame.setLayout(new BorderLayout());
         panel1.setLayout(new BorderLayout());
         panel2.setLayout(new BorderLayout());
@@ -42,8 +43,7 @@ public class MainGUI {
         addBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.dispose();
-                CreateGUI a = new CreateGUI();//opens Create view
+                controller.setCreateVis();
             }
         });
 
@@ -67,7 +67,7 @@ public class MainGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                ViewGUI a = new ViewGUI();//opens Create view
+                controller.setDetailVis();
             }
         });
 
@@ -78,4 +78,7 @@ public class MainGUI {
         frame.setVisible(true);
     }
 
+    public JFrame getFrame() {
+        return frame;
+    }
 }

@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 public class CreateGUI {
 
     private IdGenerator id = new IdGenerator();
-
+    private Controller controller;
     private JFrame frame = new JFrame();
     private JPanel panel1 = new JPanel();
     private JPanel panel2 = new JPanel();
@@ -34,11 +34,10 @@ public class CreateGUI {
     private JButton createBtn = new JButton("Erstellen");
 
 
-    public static void main(String[] args) {
-        CreateGUI a = new CreateGUI();
-    }
 
-    public CreateGUI() {
+
+    public CreateGUI(Controller controller) {
+        this.controller = controller;
         frame.setLayout(new BorderLayout());
         panel1.setLayout(new BorderLayout());
         panel2.setLayout(new GridLayout(8,2));
@@ -88,10 +87,7 @@ public class CreateGUI {
         backBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.dispose();
-                MainGUI a = new MainGUI();
-                Model model = new Model();
-                System.out.println(model.getData());
+                controller.setMainVis();
             }
         });
 
@@ -99,11 +95,8 @@ public class CreateGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 UserData uData = new UserData(id.getID(), field1.getText(), field2.getText(), field3.getText(), field4.getText(), field5.getText(), field6.getText(), field7.getText(), field8.getText());
-                Controller controller = new Controller();
                 controller.addUser(uData);
-                frame.dispose();
-                MainGUI a = new MainGUI();
-
+                controller.setMainVis();
             }
         });
 
@@ -118,4 +111,7 @@ public class CreateGUI {
         return data;
     }
 
+    public JFrame getFrame() {
+        return frame;
+    }
 }
