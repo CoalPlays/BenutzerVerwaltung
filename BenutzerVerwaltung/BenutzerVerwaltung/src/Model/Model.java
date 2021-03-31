@@ -29,29 +29,31 @@ public class Model {
     }
     public String getName(int index, int entry){
         UserData safe = data.get(index);
-        if (entry == 1){
-            value = safe.getNachname();
-        }
-        if (entry == 2){
-            value = safe.getVorname();
-        }
-        if (entry == 3){
-            value = safe.getGeburtsdatum();
-        }
-        if (entry == 4){
-            value = safe.getGeschlecht();
-        }
-        if (entry == 5){
-            value = safe.getStrasse();
-        }
-        if (entry == 6){
-            value = safe.getPlz();
-        }
-        if (entry == 7){
-            value = safe.getOrt();
-        }
-        if (entry == 8){
-            value = safe.getNumber();
+        switch (entry) {
+            case 1:
+                value = safe.getNachname();
+                break;
+            case 2:
+                value = safe.getVorname();
+                break;
+            case 3:
+                value = safe.getGeburtsdatum();
+                break;
+            case 4:
+                value = safe.getGeschlecht();
+                break;
+            case 5:
+                value = safe.getStrasse();
+                break;
+            case 6:
+                value = safe.getPlz();
+                break;
+            case 7:
+                value = safe.getOrt();
+                break;
+            case 8:
+                value = safe.getNumber();
+                break;
         }
         return value;
     }

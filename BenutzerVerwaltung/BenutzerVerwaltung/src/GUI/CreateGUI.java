@@ -10,6 +10,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class CreateGUI {
 
     private Controller controller;
@@ -20,10 +21,12 @@ public class CreateGUI {
     private JLabel title = new JLabel("Erstellen", SwingConstants.CENTER);
     private JLabel data;
 
+    private String[] petStrings = { "Kein Angabe", "Männlich", "Weiblich", "Anderes"};
+
     private JTextField field1 = new JTextField();
     private JTextField field2 = new JTextField();
     private JTextField field3 = new JTextField();
-    private JTextField field4 = new JTextField();
+    private JComboBox geschlecht = new JComboBox(petStrings);
     private JTextField field5 = new JTextField();
     private JTextField field6 = new JTextField();
     private JTextField field7 = new JTextField();
@@ -31,9 +34,6 @@ public class CreateGUI {
 
     private JButton backBtn = new JButton("Zurück");
     private JButton createBtn = new JButton("Erstellen");
-
-
-
 
     public CreateGUI(Controller controller, UserData userData) {
         this.controller = controller;
@@ -52,26 +52,26 @@ public class CreateGUI {
         panel1.add(title, BorderLayout.CENTER);
         title.setFont(new Font("Arial", Font.PLAIN, 40));
 
-        panel2.add(getLabel("Name*"));
+        panel2.add(getLabel("Name*:"));
         panel2.add(field1);
-        panel2.add(getLabel("Vorname*"));
+        panel2.add(getLabel("Vorname*:"));
         panel2.add(field2);
-        panel2.add(getLabel("Geburtsdatum"));
+        panel2.add(getLabel("Geburtsdatum:"));
         panel2.add(field3);
-        panel2.add(getLabel("Geschlecht"));
-        panel2.add(field4);
-        panel2.add(getLabel("Strasse"));
+        panel2.add(getLabel("Geschlecht:"));
+        panel2.add(geschlecht);
+        panel2.add(getLabel("Strasse:"));
         panel2.add(field5);
-        panel2.add(getLabel("PLZ"));
+        panel2.add(getLabel("PLZ:"));
         panel2.add(field6);
-        panel2.add(getLabel("Ort"));
+        panel2.add(getLabel("Ort:"));
         panel2.add(field7);
-        panel2.add(getLabel("Telefonnummer"));
+        panel2.add(getLabel("Telefonnummer:"));
         panel2.add(field8);
         field1.setFont(new Font("Arial", Font.PLAIN, 20));
         field2.setFont(new Font("Arial", Font.PLAIN, 20));
         field3.setFont(new Font("Arial", Font.PLAIN, 20));
-        field4.setFont(new Font("Arial", Font.PLAIN, 20));
+        geschlecht.setFont(new Font("Arial", Font.PLAIN, 20));
         field5.setFont(new Font("Arial", Font.PLAIN, 20));
         field6.setFont(new Font("Arial", Font.PLAIN, 20));
         field7.setFont(new Font("Arial", Font.PLAIN, 20));
@@ -97,13 +97,14 @@ public class CreateGUI {
                     field1.setBackground(Color.RED);
                     field2.setBackground(Color.RED);
                 }else{
-                    UserData uData = new UserData(controller.getID(), field1.getText(), field2.getText(), field3.getText(), field4.getText(), field5.getText(), field6.getText(), field7.getText(), field8.getText());
+                    UserData uData = new UserData(controller.getID(), field1.getText(), field2.getText(), field3.getText(), (String)geschlecht.getSelectedItem(), field5.getText(), field6.getText(), field7.getText(), field8.getText());
                     controller.addUser(uData);
                     controller.setMainVis();
                 }
             }
         });
 
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Benutzer erstellen");
         frame.setSize(700, 1000);
         frame.setVisible(true);

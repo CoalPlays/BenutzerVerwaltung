@@ -97,7 +97,7 @@ public class ViewGUI {
         });
 
 
-
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Detail-Ansicht");
         frame.setSize(700, 1000);
         frame.setVisible(true);
