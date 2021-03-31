@@ -8,11 +8,11 @@ Dies ist ein Benutzer verwaltungs Programm. Man kann Nutzer editieren und hinzuf
 
 - [x] MainGUI
 - [x] CreateGUI
-- [ ] ViewGUI
-- [ ] User Datas
-- [ ] JList mit User Daten in der MainGUI
-- [ ] Funktion um User zu erstellen
-- [ ] User in der Detailview anzeigen
+- [x] ViewGUI
+- [x] User Datas
+- [x] JList mit User Daten in der MainGUI
+- [x] Funktion um User zu erstellen
+- [x] User in der Detailview anzeigen
 
 # Grade
 pending... :octocat:	
