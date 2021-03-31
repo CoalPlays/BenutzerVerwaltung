@@ -64,8 +64,9 @@ public class MainGUI {
         detailBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.dispose();
-                controller.setDetailVis();
+                if (list.getSelectedIndex() > -1){
+                    controller.setDetailVis(list.getSelectedIndex());
+                }
             }
         });
 

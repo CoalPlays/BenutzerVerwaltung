@@ -29,7 +29,6 @@ public class Controller {
     }
 
     public void addUser(UserData userData){
-
         model.createUser(userData);
     }
 
@@ -46,9 +45,9 @@ public class Controller {
         vanish();
         createGUI = new CreateGUI(this, userData);
     }
-    public void setDetailVis() {
+    public void setDetailVis(int index) {
         vanish();
-        viewGUI = new ViewGUI(this);
+        viewGUI = new ViewGUI(this, index);
     }
 
     private void vanish() {
@@ -65,5 +64,9 @@ public class Controller {
     }
     public String getID() {
         return idGenerator.getID();
+    }
+
+    public String getName(int index, int entry){
+        return model.getName(index, entry);
     }
 }

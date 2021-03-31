@@ -52,9 +52,9 @@ public class CreateGUI {
         panel1.add(title, BorderLayout.CENTER);
         title.setFont(new Font("Arial", Font.PLAIN, 40));
 
-        panel2.add(getLabel("Name"));
+        panel2.add(getLabel("Name*"));
         panel2.add(field1);
-        panel2.add(getLabel("Vorname"));
+        panel2.add(getLabel("Vorname*"));
         panel2.add(field2);
         panel2.add(getLabel("Geburtsdatum"));
         panel2.add(field3);
@@ -93,9 +93,14 @@ public class CreateGUI {
         createBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UserData uData = new UserData(controller.getID(), field1.getText(), field2.getText(), field3.getText(), field4.getText(), field5.getText(), field6.getText(), field7.getText(), field8.getText());
-                controller.addUser(uData);
-                controller.setMainVis();
+                if (field1.getText().equals("") || field2.getText().equals("")){
+                    field1.setBackground(Color.RED);
+                    field2.setBackground(Color.RED);
+                }else{
+                    UserData uData = new UserData(controller.getID(), field1.getText(), field2.getText(), field3.getText(), field4.getText(), field5.getText(), field6.getText(), field7.getText(), field8.getText());
+                    controller.addUser(uData);
+                    controller.setMainVis();
+                }
             }
         });
 
