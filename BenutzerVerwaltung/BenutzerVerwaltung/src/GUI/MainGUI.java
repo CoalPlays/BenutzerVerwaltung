@@ -14,6 +14,7 @@ public class MainGUI {
     private JFrame frame = new JFrame();
     private JPanel panel1 = new JPanel();
     private JPanel panel2 = new JPanel();
+    private JScrollPane scroll = new JScrollPane();
     private JPanel panel3 = new JPanel();
     private JButton addBtn = new JButton("+");
     private JButton detailBtn = new JButton("Details");
@@ -28,6 +29,7 @@ public class MainGUI {
         frame.setLayout(new BorderLayout());
         panel1.setLayout(new BorderLayout());
         panel2.setLayout(new BorderLayout());
+        scroll.setViewportView(list);
 
         frame.add(panel1, BorderLayout.NORTH);
         frame.add(panel2, BorderLayout.CENTER);
@@ -53,8 +55,8 @@ public class MainGUI {
 
         list.setModel(controller.tranferList());
         list.setFont(new Font("Arial", Font.PLAIN, 24));
-        panel2.add(list, BorderLayout.CENTER);
-        list.setBorder(BorderFactory.createEmptyBorder(50,80,0,80));
+        panel2.add(scroll, BorderLayout.CENTER);
+        list.setBorder(BorderFactory.createEmptyBorder(0,80,0,80));
 
 
 
