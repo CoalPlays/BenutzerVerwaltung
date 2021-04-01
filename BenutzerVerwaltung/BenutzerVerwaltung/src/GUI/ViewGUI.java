@@ -31,9 +31,6 @@ public class ViewGUI {
 
     private JButton backBtn = new JButton("Zurück");
 
-
-
-
     public ViewGUI(Controller controller, int index) {
         this.controller = controller;
         frame.setLayout(new BorderLayout());
@@ -96,7 +93,7 @@ public class ViewGUI {
             }
         });
 
-
+        frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Detail-Ansicht");
         frame.setSize(700, 1000);

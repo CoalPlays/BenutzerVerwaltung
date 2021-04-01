@@ -10,7 +10,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class CreateGUI {
 
     private Controller controller;
@@ -21,12 +20,12 @@ public class CreateGUI {
     private JLabel title = new JLabel("Erstellen", SwingConstants.CENTER);
     private JLabel data;
 
-    private String[] petStrings = { "Kein Angabe", "Männlich", "Weiblich", "Anderes"};
+    private String[] geschlechtStrings = { "Kein Angabe", "Männlich", "Weiblich", "Anderes"};
 
     private JTextField field1 = new JTextField();
     private JTextField field2 = new JTextField();
-    private JTextField field3 = new JTextField();
-    private JComboBox geschlecht = new JComboBox(petStrings);
+    private JTextField field3 = new JTextField("dd.mm.jjjj");
+    private JComboBox geschlecht = new JComboBox(geschlechtStrings);
     private JTextField field5 = new JTextField();
     private JTextField field6 = new JTextField();
     private JTextField field7 = new JTextField();
@@ -39,11 +38,9 @@ public class CreateGUI {
         this.controller = controller;
         frame.setLayout(new BorderLayout());
         panel1.setLayout(new BorderLayout());
-        panel2.setLayout(new GridLayout(8,2));
+        panel2.setLayout(new GridLayout(8,2, 0, 50));
         panel2.setBorder(BorderFactory.createEmptyBorder(20,100,0,100));
         panel3.setLayout(new GridLayout(1,2));
-
-
 
         frame.add(panel1, BorderLayout.NORTH);
         frame.add(panel2, BorderLayout.CENTER);
@@ -94,8 +91,8 @@ public class CreateGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (field1.getText().equals("") || field2.getText().equals("")){
-                    field1.setBackground(Color.RED);
-                    field2.setBackground(Color.RED);
+                    field1.setBackground(new Color(165, 4, 4));
+                    field2.setBackground(new Color(165, 4, 4));
                 }else{
                     UserData uData = new UserData(controller.getID(), field1.getText(), field2.getText(), field3.getText(), (String)geschlecht.getSelectedItem(), field5.getText(), field6.getText(), field7.getText(), field8.getText());
                     controller.addUser(uData);
@@ -104,6 +101,7 @@ public class CreateGUI {
             }
         });
 
+        frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Benutzer erstellen");
         frame.setSize(700, 1000);

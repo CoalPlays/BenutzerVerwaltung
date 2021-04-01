@@ -63,8 +63,8 @@ public class MainGUI {
 
 
         panel3.add(detailBtn);
-        detailBtn.setPreferredSize(new Dimension(700,80));
-        detailBtn.setFont(new Font("Arial", Font.PLAIN, 40));
+        detailBtn.setPreferredSize(new Dimension(700,50));
+        detailBtn.setFont(new Font("Arial", Font.PLAIN, 24));
         detailBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -74,8 +74,8 @@ public class MainGUI {
             }
         });
         panel3.add(deleteBtn);
-        deleteBtn.setPreferredSize(new Dimension(700,80));
-        deleteBtn.setFont(new Font("Arial", Font.PLAIN, 40));
+        deleteBtn.setPreferredSize(new Dimension(700,50));
+        deleteBtn.setFont(new Font("Arial", Font.PLAIN, 24));
         deleteBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -85,7 +85,7 @@ public class MainGUI {
             }
         });
 
-
+        frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Benutzer-Verwaltung");
         frame.setSize(700, 1000);
