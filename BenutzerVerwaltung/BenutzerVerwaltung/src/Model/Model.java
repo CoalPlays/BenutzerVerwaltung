@@ -1,6 +1,7 @@
 package Model;
 
 import Data.*;
+import controller.Controller;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -8,23 +9,25 @@ import java.util.ArrayList;
 public class Model {
     private ArrayList<UserData> data = new ArrayList<>();
     private IdGenerator id = new IdGenerator();
-    private DefaultListModel model1 = new DefaultListModel();
     private String value;
+    private Controller controller;
 
-
-    public Model() {
-
+    public Model(Controller controller) {
+        this.controller = controller;
     }
 
 
     public void createUser(UserData userData) {
-        String text = userData.getID() + "    " + userData.getVorname() + " " + userData.getNachname();
-        model1.addElement(text);
+
         data.add(userData);
     }
 
     public DefaultListModel getList (){
-
+        DefaultListModel model1 = new DefaultListModel();
+        for (UserData d: data) {
+            String text = d.getID() + "    " + d.getVorname() + " " + d.getNachname();
+            model1.addElement(text);
+        }
         return model1;
     }
     public String getName(int index, int entry){
@@ -58,5 +61,16 @@ public class Model {
         return value;
     }
 
+    public void deleteUser(int Index) {
+        controller.setNewId();
+        data.remove(Index++);
+        for (UserData d: data) {
+            int id = Integer.parseInt(d.getID());
+            if (id > Index){
+                id--;
+                d.setID(controller.getId(id));
+            }
 
+        }
+    }
 }

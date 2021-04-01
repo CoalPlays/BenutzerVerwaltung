@@ -23,7 +23,7 @@ public class Controller {
 
     public Controller() {
         idGenerator = new IdGenerator();
-        model = new Model();
+        model = new Model(this);
         userData = new UserData();
         setMainVis();
     }
@@ -32,7 +32,7 @@ public class Controller {
         model.createUser(userData);
     }
 
-    public DefaultListModel tranferList(){
+    public DefaultListModel transferList(){
         DefaultListModel model1 = model.getList();
         return model1;
     }
@@ -65,8 +65,24 @@ public class Controller {
     public String getID() {
         return idGenerator.getID();
     }
+    public String getId(int id){
+        String idText = idGenerator.getID(id);
+        return idText;
+    }
+    public void setNewId() {
+        idGenerator.setNewId();
+    }
 
     public String getName(int index, int entry){
         return model.getName(index, entry);
     }
+    public void deleteUser(int index){
+        model.deleteUser(index);
+        setMainVis();
+    }
+
+
+
+
+
 }

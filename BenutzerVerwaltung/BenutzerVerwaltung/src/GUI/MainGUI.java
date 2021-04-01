@@ -18,6 +18,7 @@ public class MainGUI {
     private JPanel panel3 = new JPanel();
     private JButton addBtn = new JButton("+");
     private JButton detailBtn = new JButton("Details");
+    private JButton deleteBtn = new JButton("Delete");
     private JLabel title = new JLabel("Benutzer", SwingConstants.CENTER);
     private JLabel idname = new JLabel("ID       Name");
     JList list = new JList();
@@ -29,6 +30,7 @@ public class MainGUI {
         frame.setLayout(new BorderLayout());
         panel1.setLayout(new BorderLayout());
         panel2.setLayout(new BorderLayout());
+        panel3.setLayout(new GridLayout(1,2));
         scroll.setViewportView(list);
 
         frame.add(panel1, BorderLayout.NORTH);
@@ -53,7 +55,7 @@ public class MainGUI {
         idname.setBorder(BorderFactory.createEmptyBorder(20,80,0,0));
 
 
-        list.setModel(controller.tranferList());
+        list.setModel(controller.transferList());
         list.setFont(new Font("Arial", Font.PLAIN, 24));
         panel2.add(scroll, BorderLayout.CENTER);
         list.setBorder(BorderFactory.createEmptyBorder(0,80,0,80));
@@ -68,6 +70,17 @@ public class MainGUI {
             public void actionPerformed(ActionEvent e) {
                 if (list.getSelectedIndex() > -1){
                     controller.setDetailVis(list.getSelectedIndex());
+                }
+            }
+        });
+        panel3.add(deleteBtn);
+        deleteBtn.setPreferredSize(new Dimension(700,80));
+        deleteBtn.setFont(new Font("Arial", Font.PLAIN, 40));
+        deleteBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (list.getSelectedIndex() > -1){
+                    controller.deleteUser(list.getSelectedIndex());
                 }
             }
         });
