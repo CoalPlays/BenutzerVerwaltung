@@ -14,5 +14,18 @@ Dies ist ein Benutzer verwaltungs Programm. Man kann Nutzer editieren und hinzuf
 - [x] Funktion um User zu erstellen
 - [x] User in der Detailview anzeigen
 
+# Views
+Main gui
+
+![test](pictures/Main.png)
+
+Detail gui
+
+![test](pictures/detail.png)
+
+Create gui
+
+![test](pictures/Create.png)
+
 # Grade
 pending... :octocat:	
