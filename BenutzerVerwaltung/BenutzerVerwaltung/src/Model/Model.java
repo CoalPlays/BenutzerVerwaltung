@@ -73,4 +73,9 @@ public class Model {
 
         }
     }
+    public UserData getData(int index){
+        UserData values = data.get(index);
+        return values;
+    }
+
 }

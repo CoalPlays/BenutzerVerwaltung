@@ -3,6 +3,7 @@ package controller;
 import Data.IdGenerator;
 import Data.UserData;
 import GUI.CreateGUI;
+import GUI.EditGUI;
 import GUI.MainGUI;
 import GUI.ViewGUI;
 import Model.Model;
@@ -17,6 +18,7 @@ public class Controller {
     private CreateGUI createGUI;
     private MainGUI mainGUI;
     private ViewGUI viewGUI;
+    private EditGUI editGUI;
     private IdGenerator idGenerator;
 
 
@@ -47,6 +49,10 @@ public class Controller {
         vanish();
         viewGUI = new ViewGUI(this, index);
     }
+    public void setEditVis(int index) {
+        vanish();
+        editGUI = new EditGUI(this, model.getData(index));
+    }
 
     private void vanish() {
 
@@ -58,6 +64,9 @@ public class Controller {
         }
         if (createGUI != null) {
             createGUI.getFrame().dispose();
+        }
+        if (editGUI != null) {
+            editGUI.getFrame().dispose();
         }
     }
     public String getID() {

@@ -19,6 +19,7 @@ public class MainGUI {
     private JButton addBtn = new JButton("+");
     private JButton detailBtn = new JButton("Details");
     private JButton deleteBtn = new JButton("Delete");
+    private JButton editBtn = new JButton("Edit");
     private JLabel title = new JLabel("Benutzer");
     private JLabel idname = new JLabel("ID       Name");
     JList list = new JList();
@@ -30,7 +31,7 @@ public class MainGUI {
         frame.setLayout(new BorderLayout());
         panel1.setLayout(new BorderLayout());
         panel2.setLayout(new BorderLayout());
-        panel3.setLayout(new GridLayout(1,2));
+        panel3.setLayout(new GridLayout(1,3));
         scroll.setViewportView(list);
 
         frame.add(panel1, BorderLayout.NORTH);
@@ -65,7 +66,17 @@ public class MainGUI {
         panel2.add(scroll, BorderLayout.CENTER);
         list.setBorder(BorderFactory.createEmptyBorder(0,80,0,80));
 
-
+        panel3.add(editBtn);
+        editBtn.setPreferredSize(new Dimension(700,50));
+        editBtn.setFont(new Font("Arial", Font.PLAIN, 24));
+        editBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (list.getSelectedIndex() > -1){
+                    controller.setEditVis(list.getSelectedIndex());
+                }
+            }
+        });
 
         panel3.add(detailBtn);
         detailBtn.setPreferredSize(new Dimension(700,50));
