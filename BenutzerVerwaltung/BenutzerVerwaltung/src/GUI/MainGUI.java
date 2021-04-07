@@ -19,7 +19,7 @@ public class MainGUI {
     private JButton addBtn = new JButton("+");
     private JButton detailBtn = new JButton("Details");
     private JButton deleteBtn = new JButton("Delete");
-    private JLabel title = new JLabel("Benutzer", SwingConstants.CENTER);
+    private JLabel title = new JLabel("Benutzer");
     private JLabel idname = new JLabel("ID       Name");
     JList list = new JList();
 
@@ -39,16 +39,21 @@ public class MainGUI {
 
         panel1.add(title, BorderLayout.CENTER);
         title.setFont(new Font("Arial", Font.PLAIN, 40));
+        title.setBorder(BorderFactory.createEmptyBorder(0,80,0,0));
+
 
         panel1.add(addBtn, BorderLayout.EAST);
-        addBtn.setPreferredSize(new Dimension(70,70));
-        addBtn.setFont(new Font("Arial", Font.PLAIN, 40));
+        addBtn.setPreferredSize(new Dimension(100,100));
+        addBtn.setFont(new Font("Arial", Font.PLAIN, 60));
         addBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.setCreateVis();
             }
         });
+        addBtn.setOpaque(false);
+        addBtn.setContentAreaFilled(false);
+        addBtn.setBorderPainted(false);
 
         panel2.add(idname, BorderLayout.NORTH);
         idname.setFont(new Font("Arial", Font.PLAIN, 24));

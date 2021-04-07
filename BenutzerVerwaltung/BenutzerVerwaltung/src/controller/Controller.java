@@ -17,14 +17,12 @@ public class Controller {
     private CreateGUI createGUI;
     private MainGUI mainGUI;
     private ViewGUI viewGUI;
-    private UserData userData;
     private IdGenerator idGenerator;
 
 
     public Controller() {
         idGenerator = new IdGenerator();
         model = new Model(this);
-        userData = new UserData();
         setMainVis();
     }
 
@@ -43,7 +41,7 @@ public class Controller {
     }
     public void setCreateVis() {
         vanish();
-        createGUI = new CreateGUI(this, userData);
+        createGUI = new CreateGUI(this);
     }
     public void setDetailVis(int index) {
         vanish();

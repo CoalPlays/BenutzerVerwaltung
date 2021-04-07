@@ -20,7 +20,7 @@ public class CreateGUI {
     private JLabel title = new JLabel("Erstellen", SwingConstants.CENTER);
     private JLabel data;
 
-    private String[] geschlechtStrings = { "Kein Angabe", "Männlich", "Weiblich", "Anderes"};
+    private String[] geschlechtStrings = { "Keine Angabe", "Männlich", "Weiblich", "Anderes"};
 
     private JTextField field1 = new JTextField();
     private JTextField field2 = new JTextField();
@@ -34,7 +34,7 @@ public class CreateGUI {
     private JButton backBtn = new JButton("Zurück");
     private JButton createBtn = new JButton("Erstellen");
 
-    public CreateGUI(Controller controller, UserData userData) {
+    public CreateGUI(Controller controller) {
         this.controller = controller;
         frame.setLayout(new BorderLayout());
         panel1.setLayout(new BorderLayout());
