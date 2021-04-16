@@ -91,8 +91,12 @@ public class CreateGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (field1.getText().equals("") || field2.getText().equals("")){
-                    field1.setBackground(new Color(165, 4, 4));
-                    field2.setBackground(new Color(165, 4, 4));
+                    if (field1.getText().equals("")){
+                        field1.setBackground(new Color(255, 105, 97));
+                    }
+                    if (field2.getText().equals("")){
+                        field2.setBackground(new Color(255, 105, 97));
+                    }
                 }else{
                     UserData uData = new UserData(controller.getID(), field1.getText(), field2.getText(), field3.getText(), (String)geschlecht.getSelectedItem(), field5.getText(), field6.getText(), field7.getText(), field8.getText());
                     controller.addUser(uData);

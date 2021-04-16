@@ -48,6 +48,7 @@ public class EditGUI {
         title.setText(userData.getVorname() + " " + userData.getNachname());
         title.setAlignmentX(SwingConstants.CENTER);
         title.setFont(new Font("Arial", Font.PLAIN, 40));
+        title.setBorder(BorderFactory.createEmptyBorder(20,100,0,0));
 
         panel2.add(getLabel("Name*:"));
         panel2.add(field1);
